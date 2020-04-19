@@ -1,9 +1,12 @@
+FILE(GLOB_RECURSE LibraryABC_include_LibraryABC_h 	include/LibraryABC/*.h)
+FILE(GLOB_RECURSE LibraryABC_src_h   			src/*.h)
+FILE(GLOB_RECURSE LibraryABC_src_cpp 			src/*.cpp)
+
 add_library(
-	LibraryABC #Default is Static, can make dynamic with: SHARED
-	include/LibraryABC/foo_calls_bar.h
-	src/foo_calls_bar.cpp
-	src/internal_bar.h
-	src/internal_bar.cpp
+	LibraryABC STATIC
+	${LibraryABC_include_LibraryABC_h}
+	${LibraryABC_src_h}
+	${LibraryABC_src_cpp}
 	)
 
 add_subdirectory(src)
