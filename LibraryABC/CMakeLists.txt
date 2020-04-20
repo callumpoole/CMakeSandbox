@@ -11,4 +11,4 @@ add_library(
 
 add_subdirectory(src)
 
-target_include_directories(LibraryABC PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include") #Allow main.cpp to do #include "LibraryABC/foo.h"
+target_include_directories(LibraryABC PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include") #Allow main.cpp to do #include "LibraryABC/foo_calls_bar.h"
