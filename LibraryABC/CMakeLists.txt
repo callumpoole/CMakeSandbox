@@ -12,3 +12,10 @@ add_library(
 add_subdirectory(src)
 
 target_include_directories(LibraryABC PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include") #Allow main.cpp to do #include "LibraryABC/foo_calls_bar.h"
+
+option(ENABLE_PCH "Enable Precompiled Headers" ON)
+if (ENABLE_PCH)
+	target_precompile_headers(LibraryABC PUBLIC 
+		<iostream> <memory> <utility> <algorithm> <functional> <sstream>
+		<vector> <string> <unordered_map> <unordered_set>)
+endif()
