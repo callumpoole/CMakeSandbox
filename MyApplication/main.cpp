@@ -1,6 +1,7 @@
 #include "LibraryABC/foo_calls_bar.h"
 
-int main()
+int main(int /*argc*/, const char* /*argv*/[])
 {
-	foo();
-}
+	foo(); 
+	return 0;
+} 
